@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.ianmalabanan.facilitiesmonitoringlogsheet.ActivityPowerMonitoring">
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:layout_marginBottom="1dp"-->
+    <!--        android:gravity="center"-->
+    <!--        android:orientation="horizontal">-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/textView"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="POWER READING"-->
+    <!--            android:textAppearance="?android:attr/textAppearanceMedium"-->
+    <!--            android:textSize="30dp" />-->
+
+    <!--    </LinearLayout>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0762b3"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_margin="5dp"
+            android:gravity="center_horizontal"
+            android:text="NEW ENTRY"
+            android:textColor="#F0F8FF"
+            android:textSize="30dp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="Panel Name: "
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/lblSavePanelName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="MDP-1"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:visibility="gone">
+
+                <Spinner
+                    android:id="@+id/spinnerPanelName"
+                    style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="20dp"
+                    android:background="@android:drawable/editbox_background_normal"
+                    android:minHeight="40dp"
+                    android:textSize="20dp"
+                    android:visibility="gone" />
+
+
+                <EditText
+                    android:id="@+id/tbNewPanelName"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@android:drawable/editbox_background_normal"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:hint="Type here..."
+                    android:textSize="20dp"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/textViewPWMDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Date:"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/txtPWMDate"
+                android:layout_width="fill_parent"
+                android:layout_height="20pt"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/ic_border_ui"
+                android:ems="10"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:hint="Type here..."
+                android:textAlignment="center"
+                android:textSize="20dp" />
+
+            <ImageButton
+                android:id="@+id/btnGetPWMDate"
+                android:layout_width="150px"
+                android:layout_height="39dp"
+                android:layout_marginTop="2dp"
+                android:background="@android:color/holo_blue_dark"
+                android:src="@drawable/ic_date"
+                android:textColor="@android:color/white"
+                android:text="..." />
+
+        </LinearLayout>
+
+            <TextView
+                android:id="@+id/textViewPWMTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Time:"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/linearTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/txtPWMTime"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="20dp"
+                    android:ems="10"
+                    android:layout_weight="1"
+                    android:layout_marginRight="2dp"
+                    android:enabled="false"
+                    android:background="@drawable/ic_border_ui"
+                    android:hint="Type here..."
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <ImageButton
+                    android:id="@+id/btnGetPWMTime"
+                    android:layout_width="150px"
+                    android:layout_height="39dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@android:color/holo_blue_dark"
+                    android:text="Select Time"
+                    android:src="@drawable/ic_time"
+                    android:textColor="@color/abc_primary_text_disable_only_material_dark" />
+            </LinearLayout>
+
+
+
+            <TextView
+                android:id="@+id/textViewVRL1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Voltage Reading (L1):"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtVRL1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/ic_border_ui"
+                android:ems="10"
+                android:hint="Type here..."
+                android:inputType="numberDecimal"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/textViewVRL2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Voltage Reading (L2):"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtVRL2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/ic_border_ui"
+                android:ems="10"
+                android:hint="Type here..."
+                android:inputType="numberDecimal"
+                android:textSize="20dp" />
+
+
+            <TextView
+                android:id="@+id/textViewVRL3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Voltage Reading (L3):"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtVRL3"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/ic_border_ui"
+                android:ems="10"
+                android:hint="Type here..."
+                android:inputType="numberDecimal"
+                android:textSize="20dp" />
+
+
+            <TextView
+                android:id="@+id/textViewKLAMPL1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="kA Reading (L1):"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtKLAMPL1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/ic_border_ui"
+                android:ems="10"
+                android:hint="Type here..."
+                android:inputType="numberDecimal"
+                android:textSize="20dp" />
+
+
+            <TextView
+                android:id="@+id/textViewKLAMPL2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="kA Reading (L2):"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtKLAMPL2"
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:gravity="center_horizontal"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/ic_border_ui"
+                android:ems="10"
+                android:hint="Type here..."
+                android:inputType="numberDecimal"
+                android:textSize="20dp" />
+
+
+            <TextView
+                android:id="@+id/textViewKLAMPL3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="kA Reading (L3):"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtKLAMPL3"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/ic_border_ui"
+                android:ems="10"
+                android:hint="Type here..."
+                android:inputType="numberDecimal"
+                android:textSize="20dp" />
+
+
+            <TextView
+                android:id="@+id/textViewKWL1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="kW Reading (L1):"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtKWL1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/ic_border_ui"
+                android:ems="10"
+                android:hint="Type here..."
+                android:inputType="numberDecimal"
+                android:textSize="20dp" />
+
+
+            <TextView
+                android:id="@+id/textViewKWL2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="kW Reading (L2):"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtKWL2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/ic_border_ui"
+                android:ems="10"
+                android:hint="Type here..."
+                android:inputType="numberDecimal"
+                android:textSize="20dp" />
+
+
+            <TextView
+                android:id="@+id/textViewKWL3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="kW Reading (L3):"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtKWL3"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/ic_border_ui"
+                android:ems="10"
+                android:hint="Type here..."
+                android:inputType="numberDecimal"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/textViewKVAL1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="kVA Reading (L1):"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtKVAL1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp"
+                android:padding="10dp"
+                android:gravity="center_horizontal"
+                android:background="@drawable/ic_border_ui"
+                android:ems="10"
+                android:hint="Type here..."
+                android:inputType="numberDecimal"
+                android:textSize="20dp" />
+
+
+            <TextView
+                android:id="@+id/textViewKVAL2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="kVA Reading (L2):"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtKVAL2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp"
+                android:padding="10dp"
+                android:gravity="center_horizontal"
+                android:background="@drawable/ic_border_ui"
+                android:ems="10"
+                android:hint="Type here..."
+                android:inputType="numberDecimal"
+                android:textSize="20dp" />
+
+
+            <TextView
+                android:id="@+id/textViewKVAL3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="kVA Reading (L3):"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtKVAL3"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/ic_border_ui"
+                android:ems="10"
+                android:hint="Type here..."
+                android:inputType="numberDecimal"
+                android:textSize="20dp" />
+
+
+            <TextView
+                android:id="@+id/textViewKWPower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="kW Power:"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtKWPower"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/ic_border_ui"
+                android:ems="10"
+                android:hint="Type here..."
+                android:inputType="numberDecimal"
+                android:textSize="20dp" />
+
+
+            <TextView
+                android:id="@+id/textViewKWPerHr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="kW Per Hour Meter Reading:"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtKWPerHr"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/ic_border_ui"
+                android:ems="10"
+                android:hint="Type here..."
+                android:inputType="numberDecimal"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/textViewPowerFrequency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Frequency:"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtPowerFrequency"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/ic_border_ui"
+                android:ems="10"
+                android:hint="Type here..."
+                android:inputType="numberDecimal"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Responsible Person:"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+            <Spinner
+                android:id="@+id/spinnerPowerResPerson"
+                style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/spinner_background"
+                android:minHeight="40dp" />
+
+            <TextView
+                android:id="@+id/textViewRemarks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Remarks:"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtPWRemarks"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/ic_border_ui"
+                android:padding="10dp"
+                android:ems="10"
+                android:gravity="top"
+                android:hint="Type here..."
+                android:inputType="textMultiLine"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/btnSavePW"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@android:color/holo_blue_dark"
+                android:text="Save"
+                android:textColor="@color/abc_primary_text_disable_only_material_dark" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
